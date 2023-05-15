@@ -3,10 +3,11 @@ import mongoose from "mongoose";
 import cors from "cors";
 
 import playersRoutes from "./routes/playersRoutes.js"
+import rankingsRoutes from "./routes/rankingsRoutes.js"
 
 // Conexión BD
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://127.0.0.1:27017/playersDB');
+mongoose.connect('mongodb://127.0.0.1:27017/rankingDB');
 
 const app = express();
 app.use(express.json());
@@ -16,6 +17,7 @@ app.use(cors());
 
 // Rutas
 app.use("/api", playersRoutes);
+app.use("/api", rankingsRoutes);
 
 
 // Control 404. Siempre al final

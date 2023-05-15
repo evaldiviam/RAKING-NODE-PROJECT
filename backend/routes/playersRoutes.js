@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get('/players', playersController.showAllPlayers);
 router.get('/players/:idPlayer', playersController.showPlayerById);
-router.get('/players/search/:query', playersController.searchPlayersByName);
+router.get('/players/search/nickname/:query', playersController.searchPlayersByNickname);
 router.post('/players', playersController.newPlayer);    
 router.put('/players', playersController.updatePlayer);
 router.delete('/players/:idPlayer', playersController.deletePlayer);

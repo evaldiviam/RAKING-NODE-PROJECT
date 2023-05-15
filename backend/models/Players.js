@@ -2,13 +2,23 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const playersSchema = new Schema({
+    nickname: {
+        type: String,
+        required: true, 
+        unique:true
+    }, 
     name: {
         type: String,
-        required: true
+        required: true, 
     }, 
-    description: {
+    surname: {
         type: String,
-        default: 'no description'
+        required: true, 
+    }, 
+    surname: {
+        type: String,
+        required: true,
+        unique:true 
     }
 }, 
 { versionKey: false }

@@ -17,15 +17,16 @@ export const showPlayerById = async (req, res) => {
     res.json(document);
 };
 
-export const searchPlayersByName = async (req, res) => {
+export const searchPlayersByNickname = async (req, res) => {
     try {
         const { query } = req.params;
-        const documents = await Players.find({ name: new RegExp(query, 'i') });
+        const documents = await Players.find({ nickname: new RegExp(query, 'i') });
         res.json(documents);
     } catch (error) {
         console.log(error);
     }
 };
+
 
 export const newPlayer = async (req, res) => {
     const document = new Players(req.body);
